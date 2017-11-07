@@ -10,13 +10,6 @@ import warnings
 class Command(BaseCommand):
     help = 'Calculate recommendations and similarities based on ratings'
 
-    def add_arguments(self, parser):
-        parser.add_argument('--verbose',
-                            action='store_true',
-                            dest='verbose',
-                            default=False,
-                            help='verbose mode')
-
     def handle(self, *args, **options):
         verbosity = int(options.get('verbosity', 0))
         if options['verbose']:
